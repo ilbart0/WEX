@@ -1,45 +1,47 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>To the Power of Math!</title>
+    <title>Wex interview excercise</title>
     <!-- Styling for the client UI -->
-    <style>
-    h1 {
-        color: #FFFFFF;
-        font-family: system-ui;
-		margin-left: 20px;
-        }
-	body {
-        background-color: #222629;
-        }
-    label {
-        color: #86C232;
-        font-family: system-ui;
-        font-size: 20px;
-        margin-left: 20px;
-		margin-top: 20px;
-        }
-     button {
-        background-color: #86C232;
-		border-color: #86C232;
-		color: #FFFFFF;
-        font-family: system-ui;
-        font-size: 20px;
-		font-weight: bold;
-        margin-left: 30px;
-		margin-top: 20px;
-		width: 140px;
-        }
-	 input {
-        color: #222629;
-        font-family: system-ui;
-        font-size: 20px;
-        margin-left: 10px;
-		margin-top: 20px;
-		width: 100px;
-        }
-    </style>
+	<style>
+	    h1 {
+	        color: #000000; /* Black text */
+	        font-family: system-ui;
+	        margin-left: 20px;
+	    }
+	    body {
+	        background-color: #F2F2F2; /* Lighter background */
+	        color: #000000; /* Black text */
+	    }
+	    label {
+	        color: #86C232;
+	        font-family: system-ui;
+	        font-size: 20px;
+	        margin-left: 20px;
+	        margin-top: 20px;
+	    }
+	    button {
+	        background-color: #86C232;
+	        border-color: #86C232;
+	        color: #FFFFFF;
+	        font-family: system-ui;
+	        font-size: 20px;
+	        font-weight: bold;
+	        margin-left: 30px;
+	        margin-top: 20px;
+	        width: 140px;
+	    }
+	    input {
+	        color: #000000; /* Black text */
+	        font-family: system-ui;
+	        font-size: 20px;
+	        margin-left: 10px;
+	        margin-top: 20px;
+	        width: 100px;
+	    }
+	</style>
     <script>
         // callAPI function that takes the base and exponent numbers as parameters
         var callAPI = (base,exponent)=>{
@@ -65,14 +67,16 @@
     </script>
 </head>
 <body>
-    <h1>TO THE POWER OF MATH!</h1>
+    <h1>Wex interview excercise - Paolo Bartolini</h1>
 	<form>
-        <label>Base number:</label>
-        <input type="text" id="base">
-        <label>...to the power of:</label>
-        <input type="text" id="exponent">
+        <label>Transaction description:</label>
+        <input type="text" id="description">
+        <label>Transaction date:</label>
+        <input type="text" id="date">
+        <label>Purchase amount ($):</label>
+        <input type="text" id="amount">
         <!-- set button onClick method to call function we defined passing input values as parameters -->
-        <button type="button" onclick="callAPI(document.getElementById('base').value,document.getElementById('exponent').value)">CALCULATE</button>
+        <button type="button" onclick="callAPI(document.getElementById('description').value,document.getElementById('date').value,document.getElementById('amount').value)">STORE TRANSACTION</button>
     </form>
 </body>
 </html>
