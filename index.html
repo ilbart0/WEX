@@ -5,13 +5,13 @@
 	<title>Wex interview excercise</title>
 	<!-- Styling for the client UI -->
 	<style type="text/css">h1 {
-	        color: #000000; /* Black text */
+	        color: #000000;
 	        font-family: system-ui;
 	        margin-left: 20px;
 	    }
 	    body {
-	        background-color: #F2F2F2; /* Lighter background */
-	        color: #000000; /* Black text */
+	        background-color: #F2F2F2;
+	        color: #000000;
 	    }
 	    label {
 	        color: #000000;
@@ -33,7 +33,7 @@
 	        height: 80px;
 	    }
 	    input {
-	        color: #000000; /* Black text */
+	        color: #000000;
 	        font-family: system-ui;
 	        font-size: 20px;
 	        margin-left: 10px;
@@ -69,11 +69,13 @@
 <h1>Wex interview excercise - Paolo Bartolini</h1>
 
 <form>
-<h2 class="p1" style="margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Helvetica;"><i>Requirement #1: Store a Purchase Transaction</i></h2>
+<h2 class="p1" style="margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Helvetica;"><span style="font-size:20px;"><i>Requirement #1: Store a Purchase Transaction</i></span></h2>
 
-<p class="p2" style="margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica;"><span style="font-size:14px;"><i>To store a transaction in the database, fill out the fields below and click button &quot;Store transaction&quot;.</i></span></p>
+<p class="p2" style="margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica;">&nbsp;</p>
 
-<p class="p2" style="margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica;"><span style="font-size:14px;"><i>The input fields are left intentionally as free text, in order to demonstrate the validation features in the application. A different UI should be used in a real customer use case.</i></span></p>
+<p class="p2" style="margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica;"><span style="font-size:18px;"><i>To store a transaction in the database, fill out the fields below and click button &quot;Store transaction&quot;.</i></span></p>
+
+<p class="p2" style="margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica;"><span style="font-size:18px;"><i>The input fields in this section are left intentionally as free text, in order to demonstrate the validation features in the application. A more user-friendly&nbsp;UI should be used in a real customer use case.</i></span></p>
 
 <p><label>Transaction description:</label> <input id="description" type="text" /></p>
 
@@ -83,5 +85,24 @@
 
 <p><!-- set button onClick method to call function we defined passing input values as parameters --><button onclick="callAPI(document.getElementById('description').value,document.getElementById('date').value,document.getElementById('amount').value)" type="button">STORE TRANSACTION</button></p>
 </form>
+
+<hr />
+<p>&nbsp;</p>
+
+<h2 class="p1" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-variant-position: normal; margin: 0px; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Helvetica;"><span style="font-size: 20px;"><i>Requirement #2: Retrieve transactions in a specified currency</i></span></h2>
+
+<p class="p2" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica; margin: 0px;">&nbsp;</p>
+
+<p class="p2" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica; margin: 0px;"><span style="font-size: 18px;"><i>To store a transaction in the database, fill out the fields below and click button &quot;Store transaction&quot;.</i></span></p>
+
+<p class="p2" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica; margin: 0px;"><span style="font-size: 18px;"><i>The input fields in this section are left intentionally as free text, in order to demonstrate the validation features in the application. A more user-friendly&nbsp;UI should be used in a real customer use case.</i></span></p>
+
+<p><label>From date:</label>&nbsp;<input id="description" type="text" /></p>
+
+<p><label>To&nbsp;date:</label>&nbsp;<input id="date" type="text" /></p>
+
+<p><label>Currency:</label>&nbsp;<input id="amount" type="text" /></p>
+
+<p><button onclick="callAPI(document.getElementById('description').value,document.getElementById('date').value,document.getElementById('amount').value)" type="button">RETRIEVE TRANSACTIONS</button></p>
 </body>
 </html>
