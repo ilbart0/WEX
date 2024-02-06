@@ -1,12 +1,10 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Wex interview excercise</title>
-    <!-- Styling for the client UI -->
-	<style>
-	    h1 {
+	<meta charset="UTF-8" />
+	<title>Wex interview excercise</title>
+	<!-- Styling for the client UI -->
+	<style type="text/css">h1 {
 	        color: #000000; /* Black text */
 	        font-family: system-ui;
 	        margin-left: 20px;
@@ -16,22 +14,23 @@
 	        color: #000000; /* Black text */
 	    }
 	    label {
-	        color: #86C232;
+	        color: #000000;
 	        font-family: system-ui;
 	        font-size: 20px;
 	        margin-left: 20px;
 	        margin-top: 20px;
 	    }
 	    button {
-	        background-color: #86C232;
-	        border-color: #86C232;
+	        background-color: #4267B2;
+	        border-color: #4267B2;
 	        color: #FFFFFF;
 	        font-family: system-ui;
 	        font-size: 20px;
 	        font-weight: bold;
 	        margin-left: 30px;
 	        margin-top: 20px;
-	        width: 140px;
+	        width: 180px;
+	        height: 80px;
 	    }
 	    input {
 	        color: #000000; /* Black text */
@@ -42,15 +41,15 @@
 	        width: 100px;
 	    }
 	</style>
-    <script>
-        // callAPI function that takes the base and exponent numbers as parameters
-        var callAPI = (base,exponent)=>{
+	<script>
+        // callAPI function
+        var callAPI = (description,date,amount)=>{
             // instantiate a headers object
             var myHeaders = new Headers();
             // add content type header to object
             myHeaders.append("Content-Type", "application/json");
             // using built in JSON utility package turn object to string and store in a variable
-            var raw = JSON.stringify({"base":base,"exponent":exponent});
+            var raw = JSON.stringify({"description":description,"date":date,"amount":amount});
             // create a JSON object with parameters for API call and store in a variable
             var requestOptions = {
                 method: 'POST',
@@ -58,7 +57,7 @@
                 body: raw,
                 redirect: 'follow'
             };
-            // make API call with parameters and use promises to get response
+            // make API call with parameters
             fetch("https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/", requestOptions)
             .then(response => response.text())
             .then(result => alert(JSON.parse(result).body))
@@ -67,16 +66,22 @@
     </script>
 </head>
 <body>
-    <h1>Wex interview excercise - Paolo Bartolini</h1>
-	<form>
-        <label>Transaction description:</label>
-        <input type="text" id="description">
-        <label>Transaction date:</label>
-        <input type="text" id="date">
-        <label>Purchase amount ($):</label>
-        <input type="text" id="amount">
-        <!-- set button onClick method to call function we defined passing input values as parameters -->
-        <button type="button" onclick="callAPI(document.getElementById('description').value,document.getElementById('date').value,document.getElementById('amount').value)">STORE TRANSACTION</button>
-    </form>
+<h1>Wex interview excercise - Paolo Bartolini</h1>
+
+<form>
+<h2 class="p1" style="margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Helvetica;"><i>Requirement #1: Store a Purchase Transaction</i></h2>
+
+<p class="p2" style="margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica;"><span style="font-size:14px;"><i>To store a transaction in the database, fill out the fields below and click button &quot;Store transaction&quot;.</i></span></p>
+
+<p class="p2" style="margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica;"><span style="font-size:14px;"><i>The input fields are left intentionally as free text, in order to demonstrate the validation features in the application. A different UI should be used in a real customer use case.</i></span></p>
+
+<p><label>Transaction description:</label> <input id="description" type="text" /></p>
+
+<p><label>Transaction date:</label> <input id="date" type="text" /></p>
+
+<p><label>Purchase amount ($):</label> <input id="amount" type="text" /></p>
+
+<p><!-- set button onClick method to call function we defined passing input values as parameters --><button onclick="callAPI(document.getElementById('description').value,document.getElementById('date').value,document.getElementById('amount').value)" type="button">STORE TRANSACTION</button></p>
+</form>
 </body>
 </html>
