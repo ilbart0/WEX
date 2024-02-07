@@ -43,7 +43,7 @@
 	</style>
 	<script>
         // callAPI function
-        var callAPIstore = (description,date,amount)=>{
+        var callAPI = (description,date,amount)=>{
             // instantiate a headers object
             var myHeaders = new Headers();
             // add content type header to object
@@ -63,34 +63,13 @@
             .then(result => alert(JSON.parse(result).body))
             .catch(error => console.log('error', error));
         }
-        // callAPI function
-        var callAPIretrieve = (from,to,currency)=>{
-            // instantiate a headers object
-            var myHeaders = new Headers();
-            // add content type header to object
-            myHeaders.append("Content-Type", "application/json");
-            // using built in JSON utility package turn object to string and store in a variable
-            var raw = JSON.stringify({"from":from,"to":to,"currency":currency});
-            // create a JSON object with parameters for API call and store in a variable
-            var requestOptions = {
-                method: 'GET',
-                headers: myHeaders,
-                body: raw,
-                redirect: 'follow'
-            };
-            // make API call with parameters
-            fetch("https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/", requestOptions)
-            .then(response => response.text())
-            .then(result => alert(JSON.parse(result).body))
-            .catch(error => console.log('error', error));
-        }
     </script>
 </head>
 <body>
 <h1>Wex interview excercise - Paolo Bartolini</h1>
 
 <form>
-<h2 class="p1" style="margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Helvetica;"><span style="font-size:20px;"><i>Requirement #1: Store a purchase transaction</i></span></h2>
+<h2 class="p1" style="margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Helvetica;"><span style="font-size:20px;"><i>Requirement #1: Store a Purchase Transaction</i></span></h2>
 
 <p class="p2" style="margin: 0px; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica;">&nbsp;</p>
 
@@ -100,11 +79,17 @@
 
 <p><label>Transaction description:</label> <input id="description" type="text" /></p>
 
+<p><em>(must not exceed 50 chars)</em></p>
+
 <p><label>Transaction date:</label> <input id="date" type="text" /></p>
+
+<p><em>(must be in format: mm/dd/aaaa)</em></p>
 
 <p><label>Purchase amount ($):</label> <input id="amount" type="text" /></p>
 
-<p><button onclick="callAPIstore(document.getElementById('description').value,document.getElementById('date').value,document.getElementById('amount').value)" type="button">STORE TRANSACTION</button></p>
+<p><em>(must be a positive number)</em></p>
+
+<p><button onclick="callAPI(document.getElementById('description').value,document.getElementById('date').value,document.getElementById('amount').value)" type="button">STORE TRANSACTION</button></p>
 </form>
 
 <hr />
@@ -124,6 +109,6 @@
 
 <p><label>Currency:</label>&nbsp;<input id="amount" type="text" /></p>
 
-<p><button onclick="callAPIretrieve(document.getElementById('from').value,document.getElementById('to').value,document.getElementById('currency').value)" type="button">RETRIEVE TRANSACTIONS</button></p>
+<p><button onclick="callAPI(document.getElementById('from').value,document.getElementById('to').value,document.getElementById('currency').value)" type="button">RETRIEVE TRANSACTIONS</button></p>
 </body>
 </html>
