@@ -43,7 +43,7 @@
 	</style>
 	<script>
         // callAPI function
-        var callAPI = (description,date,amount)=>{
+        var callAPIstore = (description,date,amount)=>{
             // instantiate a headers object
             var myHeaders = new Headers();
             // add content type header to object
@@ -53,6 +53,27 @@
             // create a JSON object with parameters for API call and store in a variable
             var requestOptions = {
                 method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+            // make API call with parameters
+            fetch("https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/", requestOptions)
+            .then(response => response.text())
+            .then(result => alert(JSON.parse(result).body))
+            .catch(error => console.log('error', error));
+        }
+        // callAPI function
+        var callAPIretrieve = (description,date,amount)=>{
+            // instantiate a headers object
+            var myHeaders = new Headers();
+            // add content type header to object
+            myHeaders.append("Content-Type", "application/json");
+            // using built in JSON utility package turn object to string and store in a variable
+            var raw = JSON.stringify({"description":description,"date":date,"amount":amount});
+            // create a JSON object with parameters for API call and store in a variable
+            var requestOptions = {
+                method: 'GET',
                 headers: myHeaders,
                 body: raw,
                 redirect: 'follow'
@@ -89,7 +110,7 @@
 
 <p><em>(must be a positive number)</em></p>
 
-<p><button onclick="callAPI(document.getElementById('description').value,document.getElementById('date').value,document.getElementById('amount').value)" type="button">STORE TRANSACTION</button></p>
+<p><button onclick="callAPIstore(document.getElementById('description').value,document.getElementById('date').value,document.getElementById('amount').value)" type="button">STORE TRANSACTION</button></p>
 </form>
 
 <hr />
@@ -109,6 +130,6 @@
 
 <p><label>Currency:</label>&nbsp;<input id="amount" type="text" /></p>
 
-<p><button onclick="callAPI(document.getElementById('from').value,document.getElementById('to').value,document.getElementById('currency').value)" type="button">RETRIEVE TRANSACTIONS</button></p>
+<p><button onclick="callAPIretrieve(document.getElementById('from').value,document.getElementById('to').value,document.getElementById('currency').value)" type="button">RETRIEVE TRANSACTIONS</button></p>
 </body>
 </html>
