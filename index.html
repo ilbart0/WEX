@@ -58,10 +58,16 @@
                 redirect: 'follow'
             };
             // make API call with parameters
-            fetch("https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/", requestOptions)
-            .then(response => response.text())
-            .then(result => alert(JSON.parse(result).body))
-            .catch(error => console.log('error', error));
+			fetch("https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/", requestOptions)
+			    .then(response => {
+			        if (!response.ok) {
+			            throw new Error('Network response was not ok');
+			        }
+			        return response.text();
+			    })
+			    .then(result => alert(JSON.parse(result).body))
+			    .catch(error => console.error('Error:', error));
+
         }
         // callAPI function
         var callAPIretrieve = (description,date,amount)=>{
