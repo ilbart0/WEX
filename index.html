@@ -122,10 +122,10 @@
 
 <p class="p2" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica; margin: 0px;"><span style="font-size: 18px;"><i>To retrieve a transaction from the database, indicate the transaction unique identifier (e.g. c026461e-aee9-4359-be55-d94a208ebde2) and click button &quot;Retrieve transaction&quot;.</i></span></p>
 
-<p><label>Transaction identifier:</label>&nbsp;<input id="identifier" type="text" /></p>
+<p><label>Transaction identifier:</label>&nbsp;<input id="transaction_id" type="text" /></p>
 
-<p><label>Target currency:</label>&nbsp;<input id="currency" type="text" /></p>
+<p><label>Target currency:</label>&nbsp;<input id="target_currency" type="text" /></p>
 
-<p><button onclick="callAPIretrieve(document.getElementById('identifier').value,document.getElementById('currency').value)" type="button">RETRIEVE TRANSACTION</button></p>
+<p><button onclick="callAPIretrieve(document.getElementById('transaction_id').value,document.getElementById('target_currency').value)" type="button">RETRIEVE TRANSACTION</button></p>
 </body>
 </html>
