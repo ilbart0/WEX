@@ -38,7 +38,7 @@
 	        font-size: 20px;
 	        margin-left: 10px;
 	        margin-top: 20px;
-	        width: 100px;
+	        width: 300px;
 	    }
 	</style>
 	<script>
@@ -124,6 +124,8 @@
 
 <p><label>Transaction identifier:</label>&nbsp;<input id="identifier" type="text" /></p>
 
-<p><button onclick="callAPIretrieve(document.getElementById('identifier').value)" type="button">RETRIEVE TRANSACTION</button></p>
+<p><label>Target currency:</label>&nbsp;<input id="currency" type="text" /></p>
+
+<p><button onclick="callAPIretrieve(document.getElementById('identifier').value,document.getElementById('currency').value)" type="button">RETRIEVE TRANSACTION</button></p>
 </body>
 </html>
