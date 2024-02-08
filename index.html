@@ -92,15 +92,11 @@
             var targetCurrency = document.getElementById('target_currency').value;
 
             // Make API call to retrieve transaction
-            fetch("https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/", {
+            fetch("https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/test/?transactionId=" + transactionId + "&targetCurrency=" + targetCurrency, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    transaction_id: transactionId,
-                    target_currency: targetCurrency
-                })
+                }
             })
             .then(response => response.json())
             .then(data => {
