@@ -120,16 +120,10 @@
 
 <p class="p2" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica; margin: 0px;">&nbsp;</p>
 
-<p class="p2" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica; margin: 0px;"><span style="font-size: 18px;"><i>To store a transaction in the database, fill out the fields below and click button &quot;Store transaction&quot;.</i></span></p>
+<p class="p2" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica; margin: 0px;"><span style="font-size: 18px;"><i>To retrieve a transaction from the database, indicate the transaction unique identifier (e.g. xxxxx) and click button &quot;Retrieve transaction&quot;.</i></span></p>
 
-<p class="p2" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica; margin: 0px;"><span style="font-size: 18px;"><i>The input fields in this section are left intentionally as free text, in order to demonstrate the validation features in the application. A more user-friendly&nbsp;UI should be used in a real customer use case.</i></span></p>
+<p><label>Transaction identifier:</label>&nbsp;<input id="identifier" type="text" /></p>
 
-<p><label>From date:</label>&nbsp;<input id="description" type="text" /></p>
-
-<p><label>To&nbsp;date:</label>&nbsp;<input id="date" type="text" /></p>
-
-<p><label>Currency:</label>&nbsp;<input id="amount" type="text" /></p>
-
-<p><button onclick="callAPIretrieve(document.getElementById('from').value,document.getElementById('to').value,document.getElementById('currency').value)" type="button">RETRIEVE TRANSACTIONS</button></p>
+<p><button onclick="callAPIretrieve(document.getElementById('identifier').value)" type="button">RETRIEVE TRANSACTION</button></p>
 </body>
 </html>
