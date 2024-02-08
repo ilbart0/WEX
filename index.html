@@ -64,13 +64,13 @@
             .catch(error => console.log('error', error));
         }
         // callAPI function
-        var callAPIretrieve = (description,date,amount)=>{
+        var callAPIretrieve = (transaction_id,target_currency)=>{
             // instantiate a headers object
             var myHeaders = new Headers();
             // add content type header to object
             myHeaders.append("Content-Type", "application/json");
             // using built in JSON utility package turn object to string and store in a variable
-            var raw = JSON.stringify({"description":description,"date":date,"amount":amount});
+            var raw = JSON.stringify({"transaction_id":transaction_id,"target_currency":target_currency});
             // create a JSON object with parameters for API call and store in a variable
             var requestOptions = {
                 method: 'GET',
