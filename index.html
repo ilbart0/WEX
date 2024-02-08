@@ -62,8 +62,8 @@
             .then(response => response.text())
             .then(result => alert(JSON.parse(result).body))
             .catch(error => console.log('error', error));
-        }
-        /*/ callAPI function
+        }		
+        // callAPI function
         var callAPIretrieve = (transaction_id,target_currency)=>{
             // instantiate a headers object
             var myHeaders = new Headers();
@@ -83,25 +83,7 @@
             .then(response => response.text())
             .then(result => alert(JSON.parse(result).body))
             .catch(error => console.log('error', error));
-        }*/
-		
-		
-		// callAPI function
-		var callAPIretrieve = (transaction_id, target_currency) => {
-		    // instantiate a headers object
-		    var myHeaders = new Headers();
-		    // add content type header to object
-		    myHeaders.append("Content-Type", "application/json");
-
-		    // construct the URL with query parameters
-		    var url = `https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/?transaction_id=${transaction_id}&target_currency=${target_currency}`;
-
-		    // create request options without body
-		    var requestOptions = {
-		        method: 'GET',
-		        headers: myHeaders,
-		        redirect: 'follow'
-		    };
+        }		
 
 		    // make API call
 		    fetch(url, requestOptions)
@@ -147,9 +129,9 @@
 
 <p class="p2" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica; margin: 0px;"><span style="font-size: 18px;"><i>To retrieve a transaction from the database, indicate the transaction unique identifier (e.g. c026461e-aee9-4359-be55-d94a208ebde2) and click button &quot;Retrieve transaction&quot;.</i></span></p>
 
-<p><label>Transaction identifier:</label>&nbsp;<input id="transaction_id" type="text" /></p>
+<p><label>Transaction identifier:</label>&nbsp;<input id="transaction_id" type="text" value="c2fa8c2f-cd0f-4d10-a7bf-93afe19ec882" /></p>
 
-<p><label>Target currency:</label>&nbsp;<input id="target_currency" type="text" /></p>
+<p><label>Target currency:</label>&nbsp;<input id="target_currency" type="text" value="USD" /></p>
 
 <p><button onclick="callAPIretrieve(document.getElementById('transaction_id').value,document.getElementById('target_currency').value)" type="button">RETRIEVE TRANSACTION</button></p>
 </body>
