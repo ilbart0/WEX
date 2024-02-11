@@ -63,51 +63,19 @@
             .then(result => alert(JSON.parse(result).body))
             .catch(error => console.log('error', error));
         }		
-        // callAPI function
-		/*
-		var callAPIretrieve = (transaction_id,target_currency)=>{
-            // instantiate a headers object
-            var myHeaders = new Headers();
-            // add content type header to object
-            myHeaders.append("Content-Type", "application/json");
-            // using built in JSON utility package turn object to string and store in a variable
-            var raw = JSON.stringify({"transaction_id":transaction_id,"target_currency":target_currency});
-            // create a JSON object with parameters for API call and store in a variable
-            var requestOptions = {
-                method: 'GET',
-                headers: myHeaders,
-                body: raw,
-                redirect: 'follow'
-            };
-            // make API call with parameters
-            fetch("https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/", requestOptions)
-            .then(response => response.text())
-            .then(result => alert(JSON.parse(result).body))
-            .catch(error => console.log('error', error));
-        }*/
-		
 		
         function callAPIretrieve() {
             var transactionId = document.getElementById('transaction_id').value;
             var targetCurrency = document.getElementById('target_currency').value;
 
             // Make API call to retrieve transaction
-            fetch("https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/test/?transactionId=" + transactionId + "&targetCurrency=" + targetCurrency, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
+            fetch("https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/test/?transactionId=" + transactionId + "&targetCurrency=" + targetCurrency)
             .then(response => response.json())
             .then(data => {
                 alert(JSON.stringify(data));
             })
             .catch(error => console.error('Error:', error));
-        }
-		
-		
-		
-				
+        }		
     </script>
 </head>
 <body>
