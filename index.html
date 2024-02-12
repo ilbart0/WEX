@@ -64,28 +64,23 @@
             .catch(error => console.log('error', error));
         }		
 		
-        function callAPIretrieve_old() {
-            var transactionId = document.getElementById('transaction_id').value;
-            var targetCurrency = document.getElementById('target_currency').value;
-
-            // Make API call to retrieve transaction
-            fetch("https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/test/?transactionId=" + transactionId + "&targetCurrency=USD")
-            .then(response => response.json())
-            .then(data => {
-                alert(JSON.stringify(data));
-            })
-            .catch(error => console.error('Error:', error));
-        }
-		
 		function callAPIretrieve() {
 		    var transactionId = document.getElementById('transaction_id').value;
 		    var targetCurrency = document.getElementById('target_currency').value;
 
-		    // Make API call to retrieve transaction
-		    //fetch("https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/test/?transactionId=" + transactionId + "&targetCurrency=USD")
+		    // Construct the URL
+		    var url = "https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/test/?transactionId=" + transactionId + "&targetCurrency=" + targetCurrency;
+
+		    // Redirect to the constructed URL
+		    window.location.href = url;
+
+
+
+
+		    /* Make API call to retrieve transaction
 		    fetch("https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/test/?transactionId=" + transactionId + "&targetCurrency=USD", {
 		        method: 'GET',
-		        mode: 'cors' // Set mode to 'cors' to enable CORS
+		        mode: 'cors'
 		    })
 			.then(response => {
 		        if (!response.ok) {
@@ -99,7 +94,7 @@
 		    })
 		    .catch(error => {
 		        console.error('Error fetching data:', error);
-		    });
+		    });*/
 		}		
 		
 				
