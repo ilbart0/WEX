@@ -73,30 +73,6 @@
 
 		    // Redirect to the constructed URL
 		    window.location.href = url;
-
-
-
-
-		    /* Make API call to retrieve transaction
-		    fetch("https://45kev1k6d8.execute-api.eu-west-2.amazonaws.com/dev/test/?transactionId=" + transactionId + "&targetCurrency=USD", {
-		        method: 'GET',
-		        mode: 'cors'
-		    })
-			.then(response => {
-		        if (!response.ok) {
-		            throw new Error('Network response was not ok');
-		        }
-		        return response.json();
-		    })
-		    .then(data => {
-		        console.log('Response:', data);
-		        alert(JSON.stringify(data));
-		    })
-		    .catch(error => {
-		        console.error('Error fetching data:', error);
-		    });*/
-		}		
-		
 				
     </script>
 </head>
@@ -136,9 +112,9 @@
 
 <p class="p2" style="font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-alternates: normal; font-kerning: auto; font-optical-sizing: auto; font-feature-settings: normal; font-variation-settings: normal; font-variant-position: normal; font-stretch: normal; font-size: 10px; line-height: normal; font-family: Helvetica; margin: 0px;"><span style="font-size: 18px;"><i>To retrieve a transaction from the database, indicate the transaction unique identifier (e.g. c026461e-aee9-4359-be55-d94a208ebde2) and click button &quot;Retrieve transaction&quot;.</i></span></p>
 
-<p><label>Transaction identifier:</label>&nbsp;<input id="transaction_id" type="text" value="c2fa8c2f-cd0f-4d10-a7bf-93afe19ec882" /></p>
+<p><label>Transaction identifier:</label>&nbsp;<input id="transaction_id" type="text" value="c026461e-aee9-4359-be55-d94a208ebde2" /></p>
 
-<p><label>Target currency:</label>&nbsp;<input id="target_currency" type="text" value="USD" /></p>
+<p><label>Target currency:</label>&nbsp;<input id="target_currency" type="text" value="EUR" /></p>
 
 <p><button onclick="callAPIretrieve()" type="button">RETRIEVE TRANSACTION</button></p>
 
