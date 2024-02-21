@@ -8,7 +8,6 @@ Functions currently available:
 
 Yet to implement:
 - currency conversion of retrieved transaction
-- unit testing
 
 AWS resources deployed:
 - Lambdas (readFromDB and writeToDB)
